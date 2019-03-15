@@ -1,0 +1,105 @@
+=== this idea =====================================
+branch:
+- master: commit tagged version only (marco.mescoli: chief)
+- concat: commit all develops (marco.mescoli)
+- add: commit all develops (omnibit)
+
+. make workflow picture 
+
+files status:
+ 1. untracked *[touch, delete or edit file]*
+ 2. staging/index *[git add file]*
+ 3. head *[git commit]*
+ 4. wanStored *[git push]*
+
+====================================================
+
+--- marco.mescoli ---
+https://github.com/login 
+marco.mescoli@fermi.mo.it
+new repo
+  description
+  create repository
+  https://github.com/mekkoli/gitExample.git (https)
+  git@github.com:mekkoli/gitExample.git (ssh)
+
+marco@myDesktop:~/marco.mescoli$
+mkdir gitExample
+cd gitExample
+vi README.md
+git init
+git status
+git add README.md
+git status
+git config --global user.email "marco.mescoli@fermi.mo.it"
+git config --global user.name "marco.mescoli"
+git commit -m "first commit"
+git status
+git remote add origin https://github.com/mekkoli/gitExample.git (del git conf file in ~ dir)
+git push -u origin master
+git config credential.helper store
+git push -u origin master (-u add upstream)
+
+https://github.com/mekkoli/gitExample
+  settings
+  collaborator
+  search by username: omnibit
+  add collaborator (this send email invite to collaborator)
+
+--- omnibit ---
+open and signin in https://github.com/omnibit
+open email invite from marco.mescoli and click on repo url invitation
+https://github.com/mekkoli/gitExample/invitations 
+accept invitation so you can push content on gitExample repo
+
+omnibit@myDesktop:~/gitExample$
+git clone https://github.com/mekkoli/gitExample
+cd gitExample
+git status
+git checkout -b sum
+git branch
+
+--- marco.mescoli ---
+git checkout -b concat
+git branch
+vi concat.py
+vi test.py
+chmod +x test.py
+./test.py
+vi .gitignore (ignore __pycache__ and test.py)
+git status
+git add .
+git status
+git commit -m "concat.py done"
+
+--- omnibit ---
+git checkout -b concat
+vi .gitignore
+vi test.py
+chmod +x test.py
+vi sum.py
+git status
+git add .
+git status
+git config --global user.email "m.mescoli@omnib.it"
+git config --global user.name "omnibit"
+git commit -m "add.py done"
+git config credential.helper store
+git push origin sum
+git checkout master
+git merge sum master
+git push origin master
+
+--- marco.mescoli ---
+git push origin concat
+git checkout master
+git merge concat master
+git pull origin master
+vi main.py
+git add .
+git commit -m "main.py 1.0 done"
+git tag -a v1.0 -m "add concat ver 1.0"
+git push origin v1.0
+
+
+=== explore https://github.com/mekkoli/gitExample/ ====
