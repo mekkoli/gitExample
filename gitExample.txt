@@ -1,8 +1,8 @@
 === this idea =====================================
 branch:
 - master: commit tagged version only (marco.mescoli: chief)
-- concat: commit all develops (marco.mescoli)
-- add: commit all develops (omnibit)
+- concat: commit all steps concat.py (marco.mescoli)
+- sum: commit all steps sum.py (omnibit)
 
 . make workflow picture 
 
@@ -73,8 +73,8 @@ git status
 git commit -m "concat.py done"
 
 --- omnibit ---
-git checkout -b concat
-vi .gitignore
+git checkout -b sum
+vi .gitignore (ignore __pycache__ and test.py)
 vi test.py
 chmod +x test.py
 vi sum.py
@@ -83,12 +83,11 @@ git add .
 git status
 git config --global user.email "m.mescoli@omnib.it"
 git config --global user.name "omnibit"
-git commit -m "add.py done"
+git commit -m "sum.py done"
 git config credential.helper store
 git push origin sum
 git checkout master
 git merge sum master
-git push origin master
 
 --- marco.mescoli ---
 git push origin concat
