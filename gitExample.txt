@@ -94,12 +94,23 @@ git push origin master
 git push origin concat
 git checkout master
 git merge concat master
-git pull origin master
+git pull origin master (merge ?)
+git merge sum master (merge ?)
 vi main.py
 git add .
 git commit -m "main.py 1.0 done"
 git tag -a v1.0 -m "add concat ver 1.0"
 git push origin v1.0
 
-
 === explore https://github.com/mekkoli/gitExample/ ====
+
+sublime edit gitExample.txt
+git status
+git add .
+git status
+git commit -m "git example stepByStep: gitExample.txt"
+git push origin master
+git tag -a v1.1 -m "add gitExample.txt ver 1.1"
+git push origin v1.1
+
+=== download https://github.com/mekkoli/gitExample/archive/v1.1.zip ====
