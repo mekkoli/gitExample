@@ -1,5 +1,5 @@
 # have branch on prompt
-apt install zshell
+sudo apt install zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 vi ~/.zshrc
   ZSH_THEME="af-magic"
