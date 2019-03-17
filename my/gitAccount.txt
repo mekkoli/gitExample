@@ -1,0 +1,6 @@
+m.mescoli@omnib.it, omnibit: cadabra27
+marco.mescoli@fermi.mo.it, mekkoli: cadabra27
+git remote add origin https://github.com/mekkoli/gitEdu
+git remote -v (display remote)
+git config credential.helper store
+
