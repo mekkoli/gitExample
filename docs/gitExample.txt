@@ -1,0 +1,113 @@
+=== this idea =====================================
+branch:
+- master: commit tagged version only (bob)
+- concat: commit all steps concat.py (bob)
+- sum: commit all steps sum.py (alice)
+
+files status:
+ 1. untrack *[touch, delete or edit file]*
+ 2. stage/index *[git add file]*
+ 3. head *[git commit]*
+ 4. wanStore/share *[git push]*
+
+====================================================
+
+--- bob ---
+https://github.com/login 
+bob@fermi.mo.it
+new repo
+  description
+  create repository
+  https://github.com/bob/gitExample.git (https)
+  git@github.com:bob/gitExample.git (ssh)
+
+bob@myDesktop:~/bob$
+mkdir gitExample
+cd gitExample
+vi README.md
+git init
+git status
+git add README.md
+git status
+git config --global user.email "bob@fermi.mo.it"
+git config --global user.name "bob"
+git commit -m "first commit"
+git status
+git remote add origin https://github.com/bob/gitExample.git (del git conf file in ~ dir)
+git push -u origin master
+git config credential.helper store
+git push -u origin master (-u add upstream)
+
+https://github.com/bob/gitExample
+  settings
+  collaborator
+  search by username: alice
+  add collaborator (this send email invite to collaborator)
+
+--- alice ---
+open and signin in https://github.com/alice
+open email invite from bob and click on repo url invitation
+https://github.com/bob/gitExample/invitations 
+accept invitation so you can push content on gitExample repo
+
+alice@myDesktop:~/gitExample$
+git clone https://github.com/bob/gitExample
+cd gitExample
+git status
+git checkout -b sum
+git branch
+
+--- bob ---
+git checkout -b concat
+git branch
+vi concat.py
+vi test.py
+chmod +x test.py
+./test.py
+vi .gitignore (ignore __pycache__ and test.py)
+git status
+git add .
+git status
+git commit -m "concat.py done"
+
+--- alice ---
+git checkout -b sum
+vi .gitignore (ignore __pycache__ and test.py)
+vi test.py
+chmod +x test.py
+vi sum.py
+git status
+git add .
+git status
+git config --global user.email "alice@fermi.mo.it"
+git config --global user.name "alice"
+git commit -m "sum.py done"
+git config credential.helper store
+git push origin sum
+git checkout master
+git merge sum master
+
+--- bob ---
+git push origin concat
+git checkout master
+git merge concat master
+git pull origin master (merge ?)
+git merge sum master (merge ?)
+vi main.py
+git add .
+git commit -m "main.py 1.0 done"
+git tag -a v1.0 -m "add concat ver 1.0"
+git push origin v1.0
+
+=== explore https://github.com/bob/gitExample/ ====
+
+sublime edit gitExample.txt
+git status
+git add .
+git status
+git commit -m "git example stepByStep: gitExample.txt"
+git push origin master
+git tag -a v1.1 -m "add gitExample.txt ver 1.1"
+git push origin v1.1
+
+=== download https://github.com/bob/gitExample/archive/v1.1.zip ====
