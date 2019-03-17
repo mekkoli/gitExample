@@ -8,7 +8,7 @@ files status:
  1. untrack *[touch, delete or edit file]*
  2. stage/index *[git add file]*
  3. head *[git commit]*
- 4. wanStore/share *[git push]*
+ 4. store/share *[git push]*
 
 ====================================================
 
