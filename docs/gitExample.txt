@@ -48,7 +48,7 @@ https://github.com/bob/gitExample
 open and signin in https://github.com/alice
 open email invite from bob and click on repo url invitation
 https://github.com/bob/gitExample/invitations 
-accept invitation so you can push content on gitExample repo
+accept invitation so you can push contents on gitExample repo
 
 alice@myDesktop:~/gitExample$
 git clone https://github.com/bob/gitExample
